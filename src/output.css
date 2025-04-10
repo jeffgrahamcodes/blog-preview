@@ -13,10 +13,13 @@
     --container-sm: 24rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --yellow: #f4d04e;
     --gray-950: #111111;
+    --gray-500: #6b6b6b;
     --card-radius: 20px;
     --image-radius: 10px;
     --category-radius: 4px;
@@ -177,6 +180,12 @@
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
+  .mr-3 {
+    margin-right: calc(var(--spacing) * 3);
+  }
+  .ml-3 {
+    margin-left: calc(var(--spacing) * 3);
+  }
   .box-border {
     box-sizing: border-box;
   }
@@ -192,8 +201,14 @@
   .table {
     display: table;
   }
+  .h-8 {
+    height: calc(var(--spacing) * 8);
+  }
   .h-screen {
     height: 100vh;
+  }
+  .w-8 {
+    width: calc(var(--spacing) * 8);
   }
   .w-sm {
     width: var(--container-sm);
@@ -253,6 +268,10 @@
   .text-center {
     text-align: center;
   }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
   .text-sm {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
@@ -260,6 +279,12 @@
   .leading-\[1\.5\] {
     --tw-leading: 1.5;
     line-height: 1.5;
+  }
+  .text-\(--gray-500\) {
+    color: var(--gray-500);
+  }
+  .text-\(--gray-950\) {
+    color: var(--gray-950);
   }
   .underline {
     text-decoration-line: underline;
