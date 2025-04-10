@@ -219,6 +219,9 @@
   .transform {
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
   }
+  .cursor-pointer {
+    cursor: pointer;
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -300,6 +303,13 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .hover\:text-\(--yellow\) {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--yellow);
+      }
+    }
   }
 }
 .figtree-extra-bold {
