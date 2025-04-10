@@ -23,10 +23,11 @@
       class="h-screen flex flex-col justify-center items-center bg-(--yellow)"
     >
       <article
-        class="bg-white w-sm box-border p-6 rounded-(--card-radius) shadow-[8px_8px_0_rgba(0,0,0,1)]"
+        class="bg-white w-sm box-border p-6 rounded-(--card-radius) shadow-[8px_8px_0_rgba(0,0,0,1)] border border-(--gray-950) grid grid-cols-1 gap-6"
       >
         <figure>
           <img
+            class="rounded-(--image-radius) shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]"
             src="./assets/images/illustration-article.svg"
             alt="Illustration showing HTML and CSS concepts."
           />
@@ -40,7 +41,7 @@
             defining structure, content, and presentation.
           </p>
         </section>
-        <footer>
+        <footer class="flex items-center">
           <img
             src="./assets/images/image-avatar.webp"
             alt="Author Greg Hooper's profile picture."
