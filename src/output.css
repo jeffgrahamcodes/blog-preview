@@ -187,6 +187,24 @@
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
   .mr-3 {
     margin-right: calc(var(--spacing) * 3);
   }
@@ -217,9 +235,6 @@
   .w-8 {
     width: calc(var(--spacing) * 8);
   }
-  .w-sm {
-    width: var(--container-sm);
-  }
   .max-w-fit {
     max-width: fit-content;
   }
@@ -243,6 +258,9 @@
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
+  }
+  .rounded {
+    border-radius: 0.25rem;
   }
   .rounded-\(--card-radius\) {
     border-radius: var(--card-radius);
@@ -278,10 +296,6 @@
   .text-center {
     text-align: center;
   }
-  .text-2xl {
-    font-size: var(--text-2xl);
-    line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
   .text-sm {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
@@ -315,20 +329,11 @@
     --tw-shadow: 8px 8px 0 var(--tw-shadow-color, rgba(0,0,0,1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
   .hover\:text-\(--yellow\) {
     &:hover {
       @media (hover: hover) {
         color: var(--yellow);
       }
-    }
-  }
-  .sm\:w-\(--mobile-width\) {
-    @media (width >= 40rem) {
-      width: var(--mobile-width);
     }
   }
   .sm\:w-sm {
@@ -466,11 +471,6 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -495,7 +495,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
     }
   }
 }
