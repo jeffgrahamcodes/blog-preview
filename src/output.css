@@ -11,12 +11,15 @@
     --color-white: #fff;
     --spacing: 4px;
     --container-sm: 24rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --yellow: #f4d04e;
     --gray-950: #111111;
     --card-radius: 20px;
     --image-radius: 10px;
+    --category-radius: 4px;
   }
 }
 @layer base {
@@ -195,11 +198,11 @@
   .w-sm {
     width: var(--container-sm);
   }
+  .max-w-fit {
+    max-width: fit-content;
+  }
   .transform {
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
-  }
-  .grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -210,11 +213,17 @@
   .justify-center {
     justify-content: center;
   }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
   }
   .rounded-\(--card-radius\) {
     border-radius: var(--card-radius);
+  }
+  .rounded-\(--category-radius\) {
+    border-radius: var(--category-radius);
   }
   .rounded-\(--image-radius\) {
     border-radius: var(--image-radius);
@@ -235,18 +244,28 @@
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
   .text-center {
     text-align: center;
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
+  .leading-\[1\.5\] {
+    --tw-leading: 1.5;
+    line-height: 1.5;
   }
   .underline {
     text-decoration-line: underline;
   }
   .shadow-\[0_4px_4px_0_rgba\(0\,0\,0\,0\.25\)\] {
     --tw-shadow: 0 4px 4px 0 var(--tw-shadow-color, rgba(0,0,0,0.25));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .shadow-\[0_4px_4px_0_rgba\(0\,0\,0\,1\)\] {
-    --tw-shadow: 0 4px 4px 0 var(--tw-shadow-color, rgba(0,0,0,1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-\[8px_8px_0_rgba\(0\,0\,0\,1\)\] {
@@ -299,6 +318,10 @@
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-shadow {
   syntax: "*";
@@ -379,6 +402,7 @@
       --tw-skew-x: skewX(0);
       --tw-skew-y: skewY(0);
       --tw-border-style: solid;
+      --tw-leading: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
